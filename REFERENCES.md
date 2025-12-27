@@ -97,16 +97,6 @@ This document lists the main references and resources used in developing the Qua
 - **Qiskit 1.0 Migration**: https://docs.quantum.ibm.com/migration-guides/qiskit-1.0-migration-guide
 - **Primitives Migration**: https://docs.quantum.ibm.com/migration-guides/qiskit-primitives
 
-## 8. Visualization References
-
-### Matplotlib
-- **Matplotlib Documentation**: https://matplotlib.org/stable/contents.html
-- **Matplotlib Tutorials**: https://matplotlib.org/stable/tutorials/index.html
-
-## 9. Project Proposal
-
-- Course Project Proposal: "Quantum-Aegis: A Comparative Study of Quantum Variational Algorithms for Tactical Optimization in Gaming"
-- Contains core content including problem definition, Hamiltonian formulation, and experimental design
 
 ## 10. Code Implementation Details
 
@@ -116,25 +106,4 @@ This document lists the main references and resources used in developing the Qua
 3. **Noise Simulation**: Used Qiskit Aer noise models to simulate NISQ devices
 4. **Optimizer Selection**: Referenced Qiskit documentation comparing SPSA and COBYLA
 
-## How to Answer Instructor's Questions
 
-If the instructor asks how you developed this project, you can respond as follows:
-
-1. **Theoretical Foundation**: "I first studied the theoretical foundations of VQE and QAOA algorithms, referencing papers by Farhi et al. and the Qiskit official documentation."
-
-2. **Problem Modeling**: "I mapped the tactical position selection problem to a QUBO model, referencing standard formulations for combinatorial optimization problems and using the penalty method to handle constraints."
-
-3. **Code Implementation**: "I primarily referenced Qiskit official documentation and tutorials, especially implementation examples for VQE and QAOA, as well as usage of the Primitives API."
-
-4. **Project Structure**: "I referenced Python project structure best practices, adopting a modular design that separates problem definition, solvers, noise models, etc., into different modules."
-
-5. **Version Compatibility**: "During implementation, I encountered Qiskit version compatibility issues and referenced the official migration guides, using new APIs such as StatevectorEstimator and BackendEstimator."
-
-6. **Experimental Design**: "The experimental section was designed based on the project proposal requirements, implementing three main experiments: convergence analysis, noise analysis, and scaling analysis."
-
-## Notes
-
-- All references are publicly accessible
-- Code implementation is based on Qiskit official APIs, following standard usage patterns
-- Project structure follows Python community best practices
-- Theoretical components reference classic academic papers
