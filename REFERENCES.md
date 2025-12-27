@@ -55,18 +55,7 @@ This document lists the main references and resources used in developing the Qua
 - QAOA Example: https://qiskit-community.github.io/qiskit-algorithms/tutorials/05_qaoa.html
 - Noise Simulation Example: https://qiskit.github.io/qiskit-aer/tutorials/1_aersimulator.html
 
-## 4. Python Project Structure Best Practices
-
-### Project Organization
-- **Python Project Structure**: https://docs.python-guide.org/writing/structure/
-- **Google Python Style Guide**: https://google.github.io/styleguide/pyguide.html
-- **PEP 8 -- Style Guide for Python Code**: https://peps.python.org/pep-0008/
-
-### Industry-Standard Project Structure References
-- **Apple's Python Style Guide**: Referenced for modular and clear directory structure
-- **Google's Python Style Guide**: Referenced for code organization and naming conventions
-
-## 5. Quantum Computing Fundamentals
+## 4. Quantum Computing Fundamentals
 
 ### Textbooks and Course Materials
 - Nielsen, M. A., & Chuang, I. L. (2010). "Quantum Computation and Quantum Information." Cambridge University Press.
@@ -76,7 +65,7 @@ This document lists the main references and resources used in developing the Qua
 - **IBM Quantum Learning**: https://learning.quantum.ibm.com/
 - **Qiskit Global Summer School**: https://qiskit.org/events/summer-school/
 
-## 6. Implementation-Specific References
+## 5. Implementation-Specific References
 
 ### QUBO to Ising Conversion
 - Referenced implementation from Qiskit Optimization module
@@ -90,7 +79,7 @@ This document lists the main references and resources used in developing the Qua
 - Qiskit Circuit Library: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library
 - Transpilation: https://docs.quantum.ibm.com/api/qiskit/qiskit.compiler
 
-## 7. Version Compatibility References
+## 6. Version Compatibility References
 
 ### Qiskit Version Migration
 - **Qiskit Migration Guides**: https://docs.quantum.ibm.com/migration-guides/
@@ -98,7 +87,7 @@ This document lists the main references and resources used in developing the Qua
 - **Primitives Migration**: https://docs.quantum.ibm.com/migration-guides/qiskit-primitives
 
 
-## 10. Code Implementation Details
+## 7. Code Implementation Details
 
 ### Key Implementation Points
 1. **QUBO Problem Definition**: Referenced standard QUBO formulation for combinatorial optimization problems
