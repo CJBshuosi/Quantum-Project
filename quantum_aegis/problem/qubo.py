@@ -38,6 +38,8 @@ class QUBOProblem:
             beta: Weight for distance term
             penalty: Penalty coefficient P for constraint enforcement
         """
+        if isinstance(risk_costs, float):
+            risk_costs = np.array([risk_costs])
         self.N = len(risk_costs)
         if len(distance_costs) != self.N:
             raise ValueError("Risk and distance costs must have same length")
