@@ -11,8 +11,6 @@ from .qubo import QUBOProblem
 
 
 class TacticalPositionProblem:
-    """Represents the tactical position selection problem."""
-    
     def __init__(
         self,
         N: int,
@@ -22,17 +20,6 @@ class TacticalPositionProblem:
         beta: float = 1.0,
         seed: Optional[int] = None
     ):
-        """
-        Initialize tactical position problem.
-        
-        Args:
-            N: Number of available cover points
-            risk_costs: Risk costs for each position (if None, generated randomly)
-            distance_costs: Distance costs for each position (if None, generated randomly)
-            alpha: Weight for risk term
-            beta: Weight for distance term
-            seed: Random seed for reproducibility
-        """
         self.N = N
         self.rng = np.random.default_rng(seed)
         

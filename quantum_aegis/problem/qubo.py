@@ -96,7 +96,6 @@ def build_hamiltonian(qubo_problem: QUBOProblem) -> SparsePauliOp:
     
     # Convert QUBO to Ising
     # x_i = (1 - Z_i) / 2
-    # After substitution and simplification:
     h = np.zeros(N)
     J = np.zeros((N, N))
     
@@ -134,7 +133,6 @@ def build_hamiltonian(qubo_problem: QUBOProblem) -> SparsePauliOp:
     constant = np.sum(Q) / 4 + np.sum(np.diag(Q)) / 4
     
     if len(pauli_list) == 0:
-        # Return identity with constant
         return SparsePauliOp(['I' * N], [constant])
     
     return SparsePauliOp.from_list(pauli_list)

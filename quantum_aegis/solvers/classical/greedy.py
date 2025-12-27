@@ -11,18 +11,8 @@ from ...problem.qubo import QUBOProblem
 
 
 class GreedySolver:
-    """Greedy heuristic solver for QUBO problems (approximate solution)."""
     
     def solve(self, qubo_problem: QUBOProblem) -> Dict[str, Any]:
-        """
-        Solve QUBO problem using greedy heuristic.
-        
-        Args:
-            qubo_problem: QUBO problem to solve
-            
-        Returns:
-            Dictionary with solution information
-        """
         start_time = time.time()
         
         # Greedy: select position with minimum combined cost
