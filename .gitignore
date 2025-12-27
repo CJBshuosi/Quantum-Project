@@ -42,6 +42,4 @@ Thumbs.db
 
 # Project specific
 *.log
-results/
 data/
-

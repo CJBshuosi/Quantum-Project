@@ -49,6 +49,11 @@ See `notebooks/experiments.ipynb` for the main experimental demonstration includ
 - Scaling graphs (Computation time vs. Problem Size N)
 - Noise analysis (Success probability rates under varying error rates)
 
+## results
+![convergence_plot](results/convergence_plot.png)
+![optimizer_comparison](results/optimizer_comparison.png)
+![noise_analysis](results/noise_analysis.png)
+![scaling_graph](results/scaling_analysis.png)
 ## Author
 
 BOYU LIU
