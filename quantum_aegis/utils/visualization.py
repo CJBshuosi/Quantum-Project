@@ -15,15 +15,6 @@ def plot_convergence(
     optimal_energy: Optional[float] = None,
     save_path: Optional[str] = None
 ):
-    """
-    Plot convergence curves: Energy vs. Iteration count for VQE and QAOA.
-    
-    Args:
-        vqe_history: VQE optimization history
-        qaoa_history: QAOA optimization history
-        optimal_energy: Optimal energy (for reference line)
-        save_path: Optional path to save figure
-    """
     plt.figure(figsize=(10, 6))
     
     if vqe_history:
@@ -58,15 +49,6 @@ def plot_scaling(
     classical_times: Dict[str, List[float]],
     save_path: Optional[str] = None
 ):
-    """
-    Plot scaling graphs: Computation time vs. Problem Size (N).
-    
-    Args:
-        problem_sizes: List of problem sizes N
-        quantum_times: Dictionary with 'VQE' and 'QAOA' as keys, lists of times as values
-        classical_times: Dictionary with 'brute_force' and 'greedy' as keys, lists of times as values
-        save_path: Optional path to save figure
-    """
     plt.figure(figsize=(10, 6))
     
     # Plot quantum methods
@@ -100,14 +82,6 @@ def plot_noise_analysis(
     success_rates: Dict[str, List[float]],
     save_path: Optional[str] = None
 ):
-    """
-    Plot noise analysis: Success probability rates under varying error rates.
-    
-    Args:
-        error_rates: List of error rates (gate/readout error probabilities)
-        success_rates: Dictionary with method names as keys, lists of success rates as values
-        save_path: Optional path to save figure
-    """
     plt.figure(figsize=(10, 6))
     
     for method, rates in success_rates.items():

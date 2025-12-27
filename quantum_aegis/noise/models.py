@@ -14,13 +14,6 @@ def create_depolarizing_noise_model(
 ) -> NoiseModel:
     """
     Create noise model with depolarizing errors.
-    
-    Args:
-        gate_error: Probability of depolarizing error per gate
-        measurement_error: Probability of measurement error
-        
-    Returns:
-        NoiseModel instance
     """
     noise_model = NoiseModel()
     
@@ -43,15 +36,6 @@ def create_depolarizing_noise_model(
 def create_readout_noise_model(
     readout_error: float = 0.01
 ) -> NoiseModel:
-    """
-    Create noise model with readout errors only.
-    
-    Args:
-        readout_error: Probability of readout error
-        
-    Returns:
-        NoiseModel instance
-    """
     noise_model = NoiseModel()
     
     # Add measurement error
@@ -66,16 +50,7 @@ def create_combined_noise_model(
     gate_error: float = 0.01,
     readout_error: float = 0.01
 ) -> NoiseModel:
-    """
-    Create combined noise model with both gate and readout errors.
-    
-    Args:
-        gate_error: Probability of depolarizing error per gate
-        readout_error: Probability of readout error
-        
-    Returns:
-        NoiseModel instance
-    """
+
     noise_model = NoiseModel()
     
     # Add depolarizing error to single-qubit gates

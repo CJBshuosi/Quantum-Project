@@ -50,9 +50,14 @@ See `notebooks/experiments.ipynb` for the main experimental demonstration includ
 - Noise analysis (Success probability rates under varying error rates)
 
 ## results
-![convergence_plot](results/convergence_plot.png)
+### Phase I: Algorithmic Implementation
+![convergence_plot](results/convergence_plot.png)  
+### Phase II: Noise Resilience & Tuning
+The graph below primarily shows the impact of optimizers SPSA and COBYLA on VQE computation. Blue represents the impact of SPSA on VQE, and red represents the impact of COBYLA on VQE.
 ![optimizer_comparison](results/optimizer_comparison.png)
+#### Noise Analysis: Success Probability vs. Error Rate
 ![noise_analysis](results/noise_analysis.png)
+### Phase III: Scaling Analysis (Quantum vs. Classical)
 ![scaling_graph](results/scaling_analysis.png)
 ## Author
 

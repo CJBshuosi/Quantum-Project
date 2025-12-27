@@ -1,15 +1,5 @@
 """
 QUBO problem formulation and Hamiltonian construction.
-
-The problem is formulated as a QUBO model. We seek the bitstring x that minimizes 
-the Hamiltonian H:
-
-H(x) = Σ_{i=1}^{N} (αR_i + βD_i)x_i + P (Σ_{i=1}^{N} x_i - 1)^2
-
-where:
-- x_i ∈ {0,1}: Binary variable (1 if cover i is chosen, 0 otherwise)
-- R_i, D_i: Normalized coefficients for Risk and Distance
-- P: Penalty coefficient enforcing the constraint Σx_i = 1
 """
 
 import numpy as np
@@ -28,16 +18,6 @@ class QUBOProblem:
         beta: float = 1.0,
         penalty: float = 10.0
     ):
-        """
-        Initialize QUBO problem.
-        
-        Args:
-            risk_costs: Array of risk costs R_i for each position
-            distance_costs: Array of distance costs D_i for each position
-            alpha: Weight for risk term
-            beta: Weight for distance term
-            penalty: Penalty coefficient P for constraint enforcement
-        """
         if isinstance(risk_costs, float):
             risk_costs = np.array([risk_costs])
         self.N = len(risk_costs)
@@ -62,23 +42,7 @@ class QUBOProblem:
         return (arr - arr.min()) / (arr.max() - arr.min())
     
     def _build_qubo_matrix(self) -> np.ndarray:
-        """
-        Build QUBO matrix Q such that x^T Q x = H(x).
-        
-        The Hamiltonian is:
-        H(x) = Σ_i (αR_i + βD_i)x_i + P(Σ_i x_i - 1)^2
-        
-        Expanding the constraint term:
-        P(Σ_i x_i - 1)^2 = P(Σ_i x_i^2 + 2Σ_{i<j} x_i x_j - 2Σ_i x_i + 1)
-        
-        Since x_i^2 = x_i for binary variables:
-        = P(Σ_i x_i + 2Σ_{i<j} x_i x_j - 2Σ_i x_i + 1)
-        = P(2Σ_{i<j} x_i x_j - Σ_i x_i + 1)
-        
-        So the QUBO matrix has:
-        - Diagonal: (αR_i + βD_i) - P
-        - Off-diagonal: 2P
-        """
+        """Build QUBO matrix."""
         Q = np.zeros((self.N, self.N))
         
         # Diagonal terms: linear costs minus penalty
@@ -96,12 +60,6 @@ class QUBOProblem:
     def evaluate(self, x: np.ndarray) -> float:
         """
         Evaluate Hamiltonian for given bitstring.
-        
-        Args:
-            x: Binary array of length N
-            
-        Returns:
-            Hamiltonian value H(x)
         """
         x = np.array(x)
         if len(x) != self.N:
@@ -118,9 +76,6 @@ class QUBOProblem:
     def get_optimal_solution(self) -> Tuple[np.ndarray, float]:
         """
         Find optimal solution by brute force (for small problems).
-        
-        Returns:
-            Tuple of (optimal_bitstring, optimal_energy)
         """
         best_x = None
         best_energy = float('inf')
@@ -136,20 +91,6 @@ class QUBOProblem:
 
 
 def build_hamiltonian(qubo_problem: QUBOProblem) -> SparsePauliOp:
-    """
-    Convert QUBO problem to Ising Hamiltonian for quantum algorithms.
-    
-    QUBO: x^T Q x where x_i ∈ {0,1}
-    Ising: Σ_i h_i Z_i + Σ_{i<j} J_{ij} Z_i Z_j where Z_i ∈ {-1,+1}
-    
-    Conversion: x_i = (1 - Z_i) / 2
-    
-    Args:
-        qubo_problem: QUBOProblem instance
-        
-    Returns:
-        SparsePauliOp representing the Ising Hamiltonian
-    """
     N = qubo_problem.N
     Q = qubo_problem.Q
     
